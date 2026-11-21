@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Кофе Репаблик · Coffee Republic</title>
+<meta name="description" content="Кофе Репаблик, Хабаровск: specialty coffee, завтраки весь день и доставка. Меню, доставка, Telegram, Instagram и маршрут.">
+<meta name="theme-color" content="#183d34">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Coffee Republic">
+<meta property="og:title" content="Кофе Репаблик · Хабаровск">
+<meta property="og:description" content="Меню, доставка, акции и как нас найти">
+<meta property="og:url" content="https://cafe.tuimagenstudios.com/links/">
+<meta property="og:image" content="https://cafe.tuimagenstudios.com/links/img/og.jpg?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://cafe.tuimagenstudios.com/links/">
+<link rel="icon" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/icono-apple.png">
+<style>
+@font-face{font-family:"SF Pro Display";src:url(fonts/SFProDisplay-Regular.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"SF Pro Display";src:url(fonts/SFProDisplay-Semibold.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"SF Pro Display";src:url(fonts/SFProDisplay-Bold.woff2) format("woff2");font-weight:700;font-display:swap}
+
+:root{
+  --green-900:#102923; --green-800:#183d34; --green-700:#235046; --green-500:#396c61;
+  --teal:#4e928f; --mint:#94c6b1; --mint-soft:#c8eedf; --gold:#f4d6a3; --orange:#e8743b;
+  --bg:#f4efe6; --card:#fffcf6; --ink:#12302a; --muted:#4d5a52; --edge:#ddd3c3;
+  --btn:#235046; --btn-ink:#fffcf6; --shadow:0 1px 2px rgba(60,45,25,.06),0 8px 22px rgba(60,45,25,.08);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0c1f1b; --card:#14302a; --ink:#f3efe6; --muted:#a9bfb6; --edge:#25483f;
+  --btn:#2b6356; --btn-ink:#fffcf6; --shadow:0 1px 2px #0006,0 10px 26px #0005; color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c1f1b; --card:#14302a; --ink:#f3efe6; --muted:#a9bfb6; --edge:#25483f;
+  --btn:#2b6356; --btn-ink:#fffcf6; --shadow:0 1px 2px #0006,0 10px 26px #0005; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 "SF Pro Display",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--mint);outline-offset:3px;border-radius:14px}
+.wrap{max-width:480px;margin:0 auto;padding:0 16px}
+.page{position:relative;max-width:520px;margin:0 auto;background:var(--bg);min-height:100vh;overflow:clip}
+@media (min-width:600px){
+  html,body{background:#e4dccd}
+  :root[data-theme="dark"] body,:root[data-theme="dark"]{background:#081613}
+  .page{margin:28px auto;min-height:0;border-radius:32px;box-shadow:0 2px 6px #0000000f,0 24px 60px #3c2d1926}
+}
+@media (min-width:600px) and (prefers-color-scheme:dark){:root:not([data-theme="light"]),:root:not([data-theme="light"]) body{background:#081613}}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;color:#fffcf6;text-align:center;padding:16px 0 52px;
+  background:radial-gradient(120% 90% at 30% 10%,var(--green-500),var(--green-700) 45%,var(--green-900))}
+.hero svg.rings{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.topbar{position:relative;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.lang{position:relative}
+.lang-btn,.icon-btn{display:inline-flex;align-items:center;justify-content:center;gap:5px;height:36px;border:1px solid #ffffff2b;background:#ffffff17;color:#fffcf6;border-radius:18px;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;line-height:1;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.lang-btn{padding:0 10px 0 9px}
+.lang-btn svg{opacity:.85}
+.lang-btn .chev{transition:transform .2s}
+.lang-btn[aria-expanded="true"] .chev{transform:rotate(180deg)}
+.icon-btn{width:36px;padding:0}
+.lang-menu{position:absolute;top:calc(100% + 6px);left:0;z-index:5;min-width:150px;margin:0;padding:5px;list-style:none;text-align:left;
+  background:var(--card);color:var(--ink);border:1px solid var(--edge);border-radius:14px;box-shadow:0 12px 32px #0000003a;
+  opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity .15s,transform .15s,visibility .15s}
+.lang-menu.open{opacity:1;visibility:visible;transform:none}
+.lang-menu button{display:flex;align-items:center;gap:10px;width:100%;padding:9px 10px;border:0;border-radius:9px;background:none;color:inherit;font:inherit;font-size:14px;cursor:pointer;text-align:left}
+.lang-menu button:hover{background:color-mix(in srgb,var(--teal) 12%,transparent)}
+.lang-menu button b{width:24px;font-size:12px;color:var(--teal)}
+.lang-menu button[aria-checked="true"]::after{content:"✓";margin-left:auto;color:var(--teal);font-weight:700}
+.avatar{position:relative;width:118px;height:118px;margin:22px auto 14px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#2b6356,var(--green-900));display:grid;place-items:center;
+  box-shadow:0 0 0 4px #ffffff1c,0 0 0 9px #94c6b11f,0 16px 40px #0007}
+.avatar img{width:88px;height:auto;display:block;filter:brightness(0) invert(.97)}
+.status{position:absolute;right:4px;bottom:6px;width:22px;height:22px;border-radius:50%;background:#7fd6a8;border:4px solid var(--green-700)}
+.status.closed{background:#d98c6b}
+h1{position:relative;margin:0;font-size:28px;font-weight:700;letter-spacing:-.01em}
+.sub{position:relative;margin:4px 0 0;color:var(--mint);font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+.bio{position:relative;margin:12px auto 0;max-width:330px;text-wrap:balance;color:#e3eee9;font-size:15px}
+.chips{position:relative;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:16px}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;white-space:nowrap;border-radius:30px;background:#ffffff14;border:1px solid #ffffff22;font-size:13px;color:#f1f7f4}
+.chip b{font-weight:600}
+.chip svg{color:var(--mint);flex:none}
+.chip .sep{opacity:.45}
+.dot{width:8px;height:8px;border-radius:50%;background:#7fd6a8}
+.dot.closed{background:#d98c6b}
+
+/* CONTENT */
+.sheet{position:relative;z-index:1;margin-top:-26px;padding:20px 0 8px;background:var(--bg);border-radius:26px 26px 0 0}
+.links{display:grid;gap:10px}
+.link{display:flex;align-items:center;gap:14px;min-height:64px;padding:10px 16px 10px 10px;border-radius:18px;background:var(--card);
+  border:1px solid var(--edge);box-shadow:var(--shadow);transition:transform .15s,box-shadow .15s}
+.link:hover{transform:translateY(-2px)}
+.link:active{transform:scale(.985)}
+.link .ic{flex:none;width:44px;height:44px;border-radius:13px;display:grid;place-items:center;background:var(--green-700);color:#fff}
+.link .ic svg{width:22px;height:22px}
+.link .tx{flex:1;min-width:0}
+.link .t{display:block;font-weight:600;font-size:16px}
+.link .d{display:block;color:var(--muted);font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.link .arr{color:var(--muted);flex:none}
+.link.primary{background:var(--btn);color:var(--btn-ink);border-color:transparent}
+.link.primary .ic{background:#fffcf6;color:var(--green-700)}
+.link.primary .d,.link.primary .arr{color:var(--mint-soft)}
+.ic.tg{background:#2aa3d9}.ic.ig{background:linear-gradient(45deg,#f5a524,#e1306c 50%,#8a3ab9)}
+.ic.gis{background:#36a04a}.ic.ya{background:#fc3f1d}.ic.or{background:var(--orange)}
+
+h2{margin:30px 2px 12px;font-size:19px;font-weight:700;display:flex;justify-content:space-between;align-items:baseline}
+h2 a{font-size:14px;font-weight:600;color:var(--teal)}
+
+/* PROMOS */
+.promos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.promo{display:block;padding:0;border:0;cursor:zoom-in;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);background:#efe6da;aspect-ratio:25/32;transition:transform .15s}
+.promo:hover{transform:translateY(-2px)}
+.promo img{width:100%;height:100%;object-fit:contain;display:block}
+.lightbox{border:0;padding:0;background:none;max-width:min(92vw,460px);max-height:92svh;overflow:visible}
+.lightbox::backdrop{background:#06110ecc;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.lightbox img{display:block;width:100%;height:auto;max-height:84svh;object-fit:contain;border-radius:18px}
+.lightbox .close{position:absolute;top:-14px;right:-8px;width:38px;height:38px;border-radius:50%;border:0;background:#fffcf6;color:#12302a;font-size:22px;line-height:1;cursor:pointer;box-shadow:0 4px 14px #0005}
+.lightbox .cta{display:block;margin-top:10px;text-align:center;padding:13px;border-radius:14px;background:var(--btn);color:var(--btn-ink);font-weight:600}
+
+/* VISIT */
+.visit{border-radius:20px;overflow:hidden;background:var(--card);border:1px solid var(--edge);box-shadow:var(--shadow)}
+.visit img{width:100%;height:190px;object-fit:cover;display:block}
+.visit .in{padding:14px 16px 16px}
+.row{display:flex;gap:10px;align-items:flex-start;margin:6px 0;color:var(--ink)}
+.row svg{flex:none;margin-top:2px;color:var(--teal)}
+.row small{color:var(--muted)}
+[data-i="hours"]{white-space:pre-line}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.btn{display:flex;justify-content:center;align-items:center;gap:6px;padding:12px;border-radius:14px;font-weight:600;font-size:14px;background:var(--btn);color:var(--btn-ink)}
+.btn.ghost{background:transparent;border:1px solid var(--edge);color:var(--ink)}
+
+/* REVIEW */
+.review{margin-top:12px;text-align:center;border-radius:20px;padding:18px 16px;background:var(--card);border:1px solid var(--edge);box-shadow:var(--shadow)}
+.stars{display:flex;justify-content:center;gap:6px;margin:10px 0 4px}
+.stars a{font-size:30px;line-height:1;color:#e8b64a;transition:transform .15s}
+.stars a:hover{transform:scale(1.15)}
+.review p{margin:0;color:var(--muted);font-size:14px}
+
+footer{text-align:center;color:var(--muted);font-size:12px;padding:22px 16px 34px}
+footer img{width:84px;opacity:.85;margin-bottom:6px}
+:root[data-theme="light"] footer img,:root:not([data-theme]) footer img{filter:brightness(.35) saturate(1.4)}
+@media (prefers-color-scheme:dark){:root:not([data-theme]) footer img{filter:none}}
+:root[data-theme="dark"] footer img{filter:none}
+
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="hero">
+  <svg class="rings" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true">
+    <defs><linearGradient id="ln" x2="1" y2="1"><stop stop-color="#94c6b1" stop-opacity=".16"/><stop offset="1" stop-color="#4e928f" stop-opacity=".42"/></linearGradient></defs>
+    <g stroke="url(#ln)" stroke-width="1.6">
+      <ellipse cx="57" cy="-200" rx="660" ry="470" transform="rotate(-28 57 -200)"/>
+      <ellipse cx="57" cy="-200" rx="690" ry="500" transform="rotate(-28 57 -200)"/>
+      <ellipse cx="810" cy="1110" rx="630" ry="400" transform="rotate(-33 810 1110)"/>
+      <ellipse cx="810" cy="1110" rx="660" ry="430" transform="rotate(-33 810 1110)"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="lang">
+        <button class="lang-btn" id="langBtn" aria-haspopup="menu" aria-expanded="false" aria-controls="langMenu" aria-label="Язык / Idioma / 语言">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+          <span id="langCur">RU</span>
+          <svg class="chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <ul class="lang-menu" id="langMenu" role="menu">
+          <li><button role="menuitemradio" data-l="ru" aria-checked="true"><b>RU</b>Русский</button></li>
+          <li><button role="menuitemradio" data-l="zh" aria-checked="false"><b>中</b>中文</button></li>
+          <li><button role="menuitemradio" data-l="en" aria-checked="false"><b>EN</b>English</button></li>
+          <li><button role="menuitemradio" data-l="es" aria-checked="false"><b>ES</b>Español</button></li>
+        </ul>
+      </div>
+      <button class="icon-btn" id="share" aria-label="Поделиться">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>
+      </button>
+    </div>
+    <div class="avatar"><img src="img/logo.svg" alt="Coffee Republic"><i class="status" id="statusDot"></i></div>
+    <h1 data-i="name">Кофе Репаблик</h1>
+    <p class="sub" data-i="sub">Coffee Republic · Хабаровск</p>
+    <p class="bio" data-i="bio">Место для встреч. Specialty coffee, завтраки весь день и доставка по центру</p>
+    <div class="chips">
+      <span class="chip"><i class="dot" id="chipDot"></i><b id="openTxt">Открыто</b><span class="sep">·</span><span id="todayHrs">08:00–21:00</span></span>
+      <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i="addrShort">Муравьёва-Амурского, 50</span></span>
+    </div>
+  </div>
+</header>
+
+<main class="sheet"><div class="wrap">
+  <nav class="links">
+    <a class="link primary" href="https://cafe.tuimagenstudios.com/" target="_blank" rel="noopener">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2M10 2v2M14 2v2"/></svg></span>
+      <span class="tx"><span class="t" data-i="menuT">Меню кофейни</span><span class="d" data-i="menuD">Фото, цены · RU · 中文 · EN · ES</span></span>
+      <span class="arr">→</span>
+    </a>
+    <a class="link" href="https://cofrep.ru/" target="_blank" rel="noopener">
+      <span class="ic or"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
+      <span class="tx"><span class="t" data-i="delT">Доставка и самовывоз</span><span class="d" data-i="delD">Заказ на cofrep.ru · с 08:30</span></span>
+      <span class="arr">→</span>
+    </a>
+    <a class="link" href="https://t.me/CoffeeRepulic" target="_blank" rel="noopener">
+      <span class="ic tg"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.4 4.1 2.9 11.3c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.1.9.8.9.5 0 .7-.2 1-.5l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.9-1.5-1.5ZM8.7 14l9.6-6.1c.5-.3.9-.1.5.2l-8.2 7.4-.3 3.4Z"/></svg></span>
+      <span class="tx"><span class="t">Telegram</span><span class="d" data-i="tgD">Новости, акции и новинки</span></span>
+      <span class="arr">→</span>
+    </a>
+    <a class="link" href="https://www.instagram.com/coffee.republic/" target="_blank" rel="noopener">
+      <span class="ic ig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span>
+      <span class="tx"><span class="t">Instagram</span><span class="d">@coffee.republic</span></span>
+      <span class="arr">→</span>
+    </a>
+    <a class="link" href="https://2gis.ru/khabarovsk/firm/70000001017399078" target="_blank" rel="noopener">
+      <span class="ic gis"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+      <span class="tx"><span class="t" data-i="routeT">Как добраться · 2ГИС</span><span class="d" data-i="routeD">ул. Муравьёва-Амурского, 50</span></span>
+      <span class="arr">→</span>
+    </a>
+  </nav>
+
+  <h2><span data-i="promoH">Акции</span></h2>
+  <div class="promos">
+    <button class="promo" type="button"><img src="img/promo-bonos.webp" width="500" height="640" alt="Тройное начисление бонусов при первом заказе на сайте" loading="lazy"></button>
+    <button class="promo" type="button"><img src="img/promo-envio.webp" width="500" height="640" alt="Бесплатная доставка по центру города" loading="lazy"></button>
+    <button class="promo" type="button"><img src="img/promo-limonadas.webp" width="500" height="640" alt="Два лимонада в подарок при заказе от 2 000 ₽" loading="lazy"></button>
+    <button class="promo" type="button"><img src="img/promo-retiro.webp" width="500" height="640" alt="Скидка 10% на самовывоз" loading="lazy"></button>
+  </div>
+  <dialog class="lightbox" id="lightbox">
+    <button class="close" type="button" aria-label="Закрыть">×</button>
+    <img id="lbImg" src="" alt="">
+    <a class="cta" href="https://cofrep.ru/" target="_blank" rel="noopener" data-i="lbCta">Заказать на cofrep.ru →</a>
+  </dialog>
+
+  <h2><span data-i="visitH">Ждём в гости</span></h2>
+  <section class="visit">
+    <img src="img/fachada.jpg" alt="Вход в кофейню Кофе Репаблик" loading="lazy">
+    <div class="in">
+      <div class="row"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg><div><span data-i="addr">Хабаровск, ул. Муравьёва-Амурского, 50</span></div></div>
+      <div class="row"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><span data-i="hours">Вс–Чт 08:00–21:00
+Пт–Сб 08:00–23:00</span><br><small data-i="hoursD">Доставка — с 08:30</small></div></div>
+      <div class="btns">
+        <a class="btn" href="https://2gis.ru/khabarovsk/firm/70000001017399078" target="_blank" rel="noopener">2ГИС</a>
+        <a class="btn ghost" href="https://yandex.ru/maps/org/kofe_repablik/1353015756/" target="_blank" rel="noopener" data-i="yandex">Яндекс Карты</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="review">
+    <strong data-i="revH">Как вам у нас?</strong>
+    <div class="stars" aria-label="Оценка">
+      <a href="https://yandex.ru/maps/org/kofe_repablik/1353015756/reviews/" target="_blank" rel="noopener" aria-label="1">★</a>
+      <a href="https://yandex.ru/maps/org/kofe_repablik/1353015756/reviews/" target="_blank" rel="noopener" aria-label="2">★</a>
+      <a href="https://yandex.ru/maps/org/kofe_repablik/1353015756/reviews/" target="_blank" rel="noopener" aria-label="3">★</a>
+      <a href="https://yandex.ru/maps/org/kofe_repablik/1353015756/reviews/" target="_blank" rel="noopener" aria-label="4">★</a>
+      <a href="https://yandex.ru/maps/org/kofe_repablik/1353015756/reviews/" target="_blank" rel="noopener" aria-label="5">★</a>
+    </div>
+    <p data-i="revD">Оставьте отзыв на Яндекс Картах — это очень помогает нам</p>
+  </section>
+</div></main>
+
+<footer>
+  <img src="img/logo.svg" alt=""><br>
+  © Кофе Репаблик · Хабаровск<br>
+  <span data-i="made">Сделано</span> <a href="https://tuimagenstudios.com/" target="_blank" rel="noopener">Tuimagen Studio</a>
+</footer>
+</div>
+
+<script>
+const T={
+ es:{name:"Coffee Republic",sub:"Кофе Репаблик · Jabárovsk",bio:"Un lugar para encontrarse. Café de especialidad, desayunos todo el día y delivery en el centro",
+  addrShort:"Muravyova-Amurskogo 50",menuT:"Carta de la cafetería",menuD:"Fotos y precios · RU · 中文 · EN · ES",
+  delT:"Delivery y retiro",delD:"Pedí en cofrep.ru · desde las 08:30",tgD:"Novedades y promociones",
+  routeT:"Cómo llegar · 2GIS",routeD:"Calle Muravyova-Amurskogo 50",promoH:"Promociones",favH:"Los favoritos",allMenu:"Toda la carta →",
+  f0:"Gran desayuno con salmón y draniki",f0d:"Desayunos todo el día — desde las 08:00",f1:"Capuchino",f2:"Sýrniki con mermelada de madreselva",
+  f3:"Matcha latte",f4:"Latte Stanislavski",visitH:"Te esperamos",addr:"Jabárovsk, calle Muravyova-Amurskogo 50",
+  hours:"Dom–Jue 08:00–21:00\nVie–Sáb 08:00–23:00",hoursD:"Delivery — desde las 08:30",yandex:"Yandex Maps",revH:"¿Cómo te fue?",
+  lbCta:"Pedir en cofrep.ru →",revD:"Dejanos tu reseña en Yandex Maps, nos ayuda muchísimo",made:"Hecho por",open:"Abierto",closed:"Cerrado"},
+ en:{name:"Coffee Republic",sub:"Кофе Репаблик · Khabarovsk",bio:"A place to meet. Specialty coffee, all-day breakfast and delivery across the city centre",
+  addrShort:"50 Muravyova-Amurskogo St",menuT:"Café menu",menuD:"Photos and prices · RU · 中文 · EN · ES",
+  delT:"Delivery & pickup",delD:"Order at cofrep.ru · from 08:30",tgD:"News, offers and new items",
+  routeT:"Directions · 2GIS",routeD:"50 Muravyova-Amurskogo St",promoH:"Offers",favH:"Guest favourites",allMenu:"Full menu →",
+  f0:"Big breakfast with salmon and draniki",f0d:"Breakfast all day — from 08:00",f1:"Cappuccino",f2:"Syrniki with honeysuckle jam",
+  f3:"Matcha latte",f4:"Stanislavsky latte",visitH:"Come visit us",addr:"Khabarovsk, 50 Muravyova-Amurskogo St",
+  hours:"Sun–Thu 08:00–21:00\nFri–Sat 08:00–23:00",hoursD:"Delivery — from 08:30",yandex:"Yandex Maps",revH:"How was your visit?",
+  lbCta:"Order at cofrep.ru →",revD:"Leave us a review on Yandex Maps — it really helps",made:"Made by",open:"Open",closed:"Closed"},
+ zh:{name:"咖啡共和国",sub:"Coffee Republic · 哈巴罗夫斯克",bio:"相聚之地。精品咖啡、全天早餐、市中心外送",
+  addrShort:"穆拉维约夫-阿穆尔斯基街50号",menuT:"咖啡馆菜单",menuD:"图片与价格 · RU · 中文 · EN · ES",
+  delT:"外送与自取",delD:"在 cofrep.ru 下单 · 08:30 起",tgD:"新闻、优惠与新品",
+  routeT:"如何到达 · 2GIS",routeD:"穆拉维约夫-阿穆尔斯基街50号",promoH:"优惠活动",favH:"客人最爱",allMenu:"全部菜单 →",
+  f0:"三文鱼土豆饼丰盛早餐",f0d:"全天供应早餐 — 08:00 起",f1:"卡布奇诺",f2:"金银木果酱奶酪煎饼",
+  f3:"抹茶拿铁",f4:"斯坦尼斯拉夫斯基拿铁",visitH:"欢迎光临",addr:"哈巴罗夫斯克，穆拉维约夫-阿穆尔斯基街50号",
+  hours:"周日至周四 08:00–21:00\n周五至周六 08:00–23:00",hoursD:"外送 — 08:30 起",yandex:"Yandex 地图",revH:"您的体验如何？",
+  lbCta:"在 cofrep.ru 下单 →",revD:"请在 Yandex 地图留下评价，对我们帮助很大",made:"制作：",open:"营业中",closed:"已打烊"}
+};
+const RU={open:"Открыто",closed:"Закрыто"};
+document.querySelectorAll("[data-i]").forEach(e=>RU[e.dataset.i]=e.textContent);
+let lang="ru";
+function setLang(l){
+  lang=l;const d=l==="ru"?RU:T[l];
+  document.documentElement.lang=l==="zh"?"zh-Hans":l;
+  document.querySelectorAll("[data-i]").forEach(e=>{if(d[e.dataset.i])e.textContent=d[e.dataset.i]});
+  document.querySelectorAll("#langMenu button").forEach(b=>b.setAttribute("aria-checked",b.dataset.l===l));
+  document.getElementById("langCur").textContent=l==="zh"?"中文":l.toUpperCase();
+  status();
+  try{localStorage.setItem("cr-lang",l)}catch(e){}
+}
+function status(){
+  // Хабаровск UTC+10
+  const k=new Date(Date.now()+10*36e5),h=k.getUTCHours()+k.getUTCMinutes()/60,dw=k.getUTCDay(),close=(dw===5||dw===6)?23:21,open=h>=8&&h<close;
+  document.getElementById("todayHrs").textContent="08:00–"+close+":00";
+  const d=lang==="ru"?RU:T[lang];
+  document.getElementById("openTxt").textContent=open?d.open:d.closed;
+  document.getElementById("chipDot").classList.toggle("closed",!open);
+  document.getElementById("statusDot").classList.toggle("closed",!open);
+}
+const lb=document.getElementById("lightbox"),lbImg=document.getElementById("lbImg");
+document.querySelectorAll(".promo").forEach(p=>p.onclick=()=>{const i=p.querySelector("img");lbImg.src=i.src;lbImg.alt=i.alt;lb.showModal()});
+lb.querySelector(".close").onclick=()=>lb.close();
+lb.addEventListener("click",e=>{if(e.target===lb)lb.close()});
+const langBtn=document.getElementById("langBtn"),langMenu=document.getElementById("langMenu");
+function menu(open){langMenu.classList.toggle("open",open);langBtn.setAttribute("aria-expanded",open);if(open)langMenu.querySelector('[aria-checked="true"]').focus()}
+langBtn.onclick=e=>{e.stopPropagation();menu(!langMenu.classList.contains("open"))};
+langMenu.querySelectorAll("button").forEach(b=>b.onclick=()=>{setLang(b.dataset.l);menu(false);langBtn.focus()});
+document.addEventListener("click",e=>{if(!e.target.closest(".lang"))menu(false)});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&langMenu.classList.contains("open")){menu(false);langBtn.focus()}});
+let saved=null;try{saved=localStorage.getItem("cr-lang")}catch(e){}
+setLang(saved&&(saved==="ru"||T[saved])?saved:"ru");
+document.getElementById("share").onclick=async()=>{
+  const data={title:"Кофе Репаблик",url:location.href};
+  try{if(navigator.share)await navigator.share(data);else{await navigator.clipboard.writeText(location.href);alert("Ссылка скопирована")}}catch(e){}
+};
+</script>
+</body>
+</html>
